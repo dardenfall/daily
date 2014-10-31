@@ -1,0 +1,22 @@
+<html>
+<head>
+   <title>Jira Multiple Subtask Bookmarklet</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   		<script type="text/javascript">
+            jQuery(document).ready(function() {
+                var linkhref = '(function(){var e=["QA Verification","Code Review","Product Owner Review"];var t=AJS.$("#summary-val").text();if(t){t=t.trim()}var n=AJS.$("#description-val .user-content-block p").html();if(n){n=n.trim()}var r=AJS.$("#components-field a").html();if(r){r=r.trim()}var i=[];for(var s=0;s<e.length;s++){var o="- "+e[s]+":"+t+' / summary:"'+t+'" description:"'+n+'" component:"'+r+'"';i.push(o)}AJS.$("#subtasks-link-link").trigger("click");AJS.$("#subtasks-overlay #tasks-code").val(i[0]+"\n"+i[1]+"\n"+i[2]);AJS.$("#subtasks-overlay .dialog-panel-body").height("500px")})();';
+                var link = '<a href="' +linkhref+ '">' + 'Create Jira Subtasks</a>';
+                $("#linkdiv").html(link);
+            });
+        </script>
+</head>
+ 
+<body>
+    Jira Subtask Creation Bookmarklet
+    <p>drag this link to your toolbar</p>
+    <div id="linkdiv">
+        <a "href"=""></a>
+    </div>
+ 
+</body>
+</html>
