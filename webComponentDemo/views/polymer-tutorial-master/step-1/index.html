@@ -18,6 +18,8 @@
     href="../components/core-toolbar/core-toolbar.html">
   <link rel="import"
     href="../components/paper-tabs/paper-tabs.html">
+  <link rel="import"
+    href="../components/google-map/google-map.html">
 
   <style>
   html,body {
@@ -58,6 +60,13 @@
   }
   </style>
 
+   <style>
+  google-map {
+    display: block;
+    height: 600px;
+  }
+</style>
+
 </head>
 
 <body unresolved>
@@ -74,6 +83,8 @@
 
     <!-- main page content will go here -->
 
+ 
+<google-map latitude="37.77493" longitude="-122.41942"></google-map>
   </core-header-panel>
   
   <script>
