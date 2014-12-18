@@ -1,0 +1,85 @@
+<link rel="import" href="">
+
+<polymer-element name="aws-meme-generator" >
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                margin-bottom: 10px;
+            }
+          
+            body{
+                font-fam
+            }
+            #meme-pic{
+                width: 800px;
+                height: 400px;
+            }
+            
+            .meme-container { 
+                display: flex;
+                width: 600px;
+                height: 400px;
+                background-size: cover;
+                flex-direction:column;
+            }
+ 
+            h2 {
+                color: white;
+                text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+                margin:3 auto;                
+                font-family: arial;
+            }
+            .top-text {
+                align-self: center;
+                height:100px;
+             }
+            .middle-spacer {
+                align-self: center;
+                height:400px;
+            }
+            .bottom-text {
+                align-self: center;
+                height:100px;
+            }
+
+        </style>
+
+        <div class="meme-container" style="background-image: url(../images/katz.jpg)">
+            <h2 class="top-text">{{topText}}</h2>
+            <h2 class="middle-spacer"></h2>
+            <h2 class="bottom-text">{{bottomText}}</h2>
+        </div>
+        <div id>
+            <label for="url-input">URL</label>
+            <input type="text" id="url-input"/>
+            <label for="top-text" >Top Text</label>
+            <input type="text" id="top-text"  value="{{topText}}"/>        
+            <label for="bottom-text"  value="{{bottomText}}">Bottom Text</label>
+            <input type="text" id="bottom-text"  value="{{bottomText}}"/>
+        <div>
+    </template>
+    <script>
+        Polymer("aws-meme-generator",{
+            publish:{
+                topText:"",
+                bottomText:""
+            },
+
+            ready:function(){
+                this.topText = "Type Top Text";
+                this.bottomText = "Type Bottom Text";
+            },
+
+
+        });
+    </script>
+</polymer-element>
+
+
+
